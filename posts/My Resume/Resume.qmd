@@ -1,0 +1,11 @@
+---
+title: "Resume"
+author: "Zephaniah Chekelea"
+date: "2023-05-07"
+image: "Zephaniah's Resume1024_1.jpg"
+---
+
+
+```{r}
+knitr::include_graphics("Zephaniah's Resume1024_1.jpg")
+```
