@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Zephaniah Chekelea",
+    "section": "",
+    "text": "About this blog\nHi All! Welcome to my page! My name is Zephaniah Chekelea. I am a graduate student at the University of North Texas, pursuing a degree in Advanced Data Analytics. Feel free to explore my page. On the top left of this page, you can click on the prompt to access my blog posts. There, you will find a quick code blog post and my resume!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "Simple Linear Regression\n\n\n\n\n\n\n\nR\n\n\nregression\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMay 7, 2023\n\n\nZephaniah Chekelea\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/my first post/index.html",
+    "href": "posts/my first post/index.html",
+    "title": "Simple Linear Regression",
+    "section": "",
+    "text": "Simple Linear Regression\n\nHi, let’s run a simple regression on automobile data to find the relationship between “mpg” and “horsepower”. In this situation, we want “mpg” to be the response variable while the horsepower is the “predictor” variable.\nFirst, let’s retrieve the automobile data from our library and get an overview of the dataset.\n\nlibrary(ISLR2)\nlibrary(MASS)\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:ISLR2':\n\n    Boston\n\ndata(\"Auto\")\nhead(Auto)\n\n  mpg cylinders displacement horsepower weight acceleration year origin\n1  18         8          307        130   3504         12.0   70      1\n2  15         8          350        165   3693         11.5   70      1\n3  18         8          318        150   3436         11.0   70      1\n4  16         8          304        150   3433         12.0   70      1\n5  17         8          302        140   3449         10.5   70      1\n6  15         8          429        198   4341         10.0   70      1\n                       name\n1 chevrolet chevelle malibu\n2         buick skylark 320\n3        plymouth satellite\n4             amc rebel sst\n5               ford torino\n6          ford galaxie 500\n\n\nNow, we would like to get the relationship between mpg and horsepower .\n\nrelationship<-lm(mpg~horsepower, data=Auto)\nsummary(relationship)\n\n\nCall:\nlm(formula = mpg ~ horsepower, data = Auto)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-13.5710  -3.2592  -0.3435   2.7630  16.9240 \n\nCoefficients:\n             Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 39.935861   0.717499   55.66   <2e-16 ***\nhorsepower  -0.157845   0.006446  -24.49   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 4.906 on 390 degrees of freedom\nMultiple R-squared:  0.6059,    Adjusted R-squared:  0.6049 \nF-statistic: 599.7 on 1 and 390 DF,  p-value: < 2.2e-16\n\n\nCool! We can even take it a step further and visualize the relationship through a plot graph with a regression line.\n\nplot(Auto$horsepower,Auto$mpg)\nabline(relationship, lwd = 5, col= \"blue\")\n\n\n\n\nSo…. what did we learn? Well, there is certainly a negative relationship between the horsepower and mpg of a vehicle and its strength is valued by the “R^2” value.\nBonus: Let’s predict what the mpg would be for a vehicle that has 176 horsepower using a prediction interval with 95% confidence.\n\npredict(relationship, data.frame(horsepower=c(176)), interval = \"prediction\")\n\n       fit      lwr      upr\n1 12.15519 2.455407 21.85497\n\n\nAnd that is all there is to it!"
+  }
+]

@@ -1,0 +1,51 @@
+---
+title: "Simple Linear Regression"
+author: "Zephaniah Chekelea"
+date: "2023-05-07"
+categories: [R, regression, analysis]
+image: "image.jpg"
+---
+
+# Simple Linear Regression
+
+#### **Hi, let's run a simple regression on automobile data to find the relationship between "mpg" and "horsepower". In this situation, we want "mpg" to be the response variable while the horsepower is the "predictor" variable.**
+
+First, let's retrieve the automobile data from our library and get an overview of the dataset.
+
+```{r, echo = TRUE}
+
+library(ISLR2)
+library(MASS)
+
+data("Auto")
+head(Auto)
+```
+
+Now, we would like to get the relationship between mpg and horsepower .
+
+```{r, echo = TRUE}
+
+relationship<-lm(mpg~horsepower, data=Auto)
+summary(relationship)
+
+```
+
+Cool! We can even take it a step further and visualize the relationship through a plot graph with a regression line.
+
+```{r, echo=TRUE}
+
+plot(Auto$horsepower,Auto$mpg)
+abline(relationship, lwd = 5, col= "blue")
+
+```
+
+So.... what did we learn? Well, there is certainly a negative relationship between the horsepower and mpg of a vehicle and its strength is valued by the "R\^2" value.
+
+Bonus: Let's predict what the mpg would be for a vehicle that has 176 horsepower using a prediction interval with 95% confidence.
+
+```{r, echo=TRUE}
+
+predict(relationship, data.frame(horsepower=c(176)), interval = "prediction")
+```
+
+And that is all there is to it!

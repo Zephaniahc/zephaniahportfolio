@@ -1,0 +1,17 @@
+---
+title: "Zephaniah Chekelea"
+image: avatar.jpg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com/in/zephaniah-chekelea/
+    - icon: github
+      text: Github
+      href: https://github.com/Zephaniahc
+---
+
+About this blog
+
+Hi All! Welcome to my page! My name is Zephaniah Chekelea. I am a graduate student at the University of North Texas, pursuing a degree in Advanced Data Analytics. Feel free to explore my page. On the top left of this page, you can click on the prompt to access my blog posts. There, you will find a quick code blog post and my resume!
